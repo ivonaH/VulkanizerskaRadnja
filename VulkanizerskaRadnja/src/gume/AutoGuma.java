@@ -96,7 +96,7 @@ public class AutoGuma {
 	 *             </ul>
 	 */
 	public void setSirina(int sirina) {
-		if (sirina < 135 && sirina > 355)
+		if (sirina < 135 || sirina > 355)//||
 			throw new RuntimeException("Sirina van opsega");
 		this.sirina = sirina;
 	}
