@@ -34,6 +34,7 @@ public class AutoGumaTest {
 	public void testSetMarkaModelEmptyString() {
 		autoGuma.setMarkaModel("");
 	}
+
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testSetMarkaModelKratakString() {
 		autoGuma.setMarkaModel("a");
@@ -55,7 +56,6 @@ public class AutoGumaTest {
 		autoGuma.setPrecnik(4);
 	}
 
-	// setSirina
 	@Test
 	public void testSetSirina() {
 		autoGuma.setSirina(200);
@@ -113,7 +113,7 @@ public class AutoGumaTest {
 		autoGuma.setSirina(200);
 		autoGuma.setVisina(60);
 
-		assertEquals(false, autoGuma.equals(autoGuma2));
+		assertFalse(autoGuma.equals(autoGuma2));
 	}
 
 	@Test
@@ -130,7 +130,7 @@ public class AutoGumaTest {
 		autoGuma2.setSirina(200);
 		autoGuma2.setVisina(60);
 
-		assertEquals(true, autoGuma.equals(autoGuma2));
+		assertTrue(autoGuma.equals(autoGuma2));
 	}
 
 	@Test
@@ -141,7 +141,7 @@ public class AutoGumaTest {
 		autoGuma.setSirina(200);
 		autoGuma.setVisina(60);
 
-		assertEquals(false, autoGuma.equals(new Object()));
+		assertFalse(autoGuma.equals(new Object()));
 	}
 
 }

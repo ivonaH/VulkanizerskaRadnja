@@ -33,7 +33,7 @@ public class VulkanizerskaRadnjaTest {
 		autoGuma.setSirina(200);
 		autoGuma.setVisina(60);
 		vr.dodajGumu(autoGuma);
-		assertEquals(true, vr.pronadjiGumu("Starfire WT200").contains(autoGuma));
+		assertTrue(vr.pronadjiGumu("Starfire WT200").contains(autoGuma));
 	}
 
 	@Test(expected = java.lang.NullPointerException.class)
@@ -60,6 +60,7 @@ public class VulkanizerskaRadnjaTest {
 		vr.dodajGumu(autoGuma);
 		assertFalse(vr.pronadjiGumu("Starfire WT888").contains(autoGuma));
 	}
+
 	@Test
 	public void testPronadjiGumuKojaPostoji() {
 		autoGuma.setMarkaModel("Starfire WT200");
@@ -69,6 +70,7 @@ public class VulkanizerskaRadnjaTest {
 		vr.dodajGumu(autoGuma);
 		assertTrue(vr.pronadjiGumu("Starfire WT200").contains(autoGuma));
 	}
+
 	@Test
 	public void testPronadjiGumeKojePostoje() {
 		autoGuma.setMarkaModel("Starfire WT200");
@@ -76,40 +78,36 @@ public class VulkanizerskaRadnjaTest {
 		autoGuma.setSirina(200);
 		autoGuma.setVisina(60);
 		vr.dodajGumu(autoGuma);
-		
-		AutoGuma autoGuma2=new AutoGuma();
+
+		AutoGuma autoGuma2 = new AutoGuma();
 		autoGuma2.setMarkaModel("Starfire WT200");
 		autoGuma2.setPrecnik(15);
 		autoGuma2.setSirina(205);
 		autoGuma2.setVisina(64);
 		vr.dodajGumu(autoGuma2);
-		
-		AutoGuma autoGuma3=new AutoGuma();
+
+		AutoGuma autoGuma3 = new AutoGuma();
 		autoGuma3.setMarkaModel("Starfire WT200");
 		autoGuma3.setPrecnik(16);
 		autoGuma3.setSirina(221);
 		autoGuma3.setVisina(62);
 		vr.dodajGumu(autoGuma3);
-		
-		AutoGuma autoGuma4=new AutoGuma();
+
+		AutoGuma autoGuma4 = new AutoGuma();
 		autoGuma4.setMarkaModel("Starfire W433");
 		autoGuma4.setPrecnik(13);
 		autoGuma4.setSirina(205);
 		autoGuma4.setVisina(62);
 		vr.dodajGumu(autoGuma4);
-	LinkedList<AutoGuma> gumeTest=new LinkedList<AutoGuma>();// {
-//			{
-//				addLast(autoGuma);
-//				add(autoGuma2);
-//				add(autoGuma3);
-//			}
-//		};
-	gumeTest.addFirst(autoGuma);
-	gumeTest.addFirst(autoGuma2);
-	gumeTest.addFirst(autoGuma3);
 		
-		assertEquals(gumeTest.size(),vr.pronadjiGumu("Starfire WT200").size());
-		assertEquals(gumeTest,vr.pronadjiGumu("Starfire WT200"));
+		LinkedList<AutoGuma> gumeTest = new LinkedList<AutoGuma>();
+
+		gumeTest.addFirst(autoGuma);
+		gumeTest.addFirst(autoGuma2);
+		gumeTest.addFirst(autoGuma3);
+
+		assertEquals(gumeTest.size(), vr.pronadjiGumu("Starfire WT200").size());
+		assertEquals(gumeTest, vr.pronadjiGumu("Starfire WT200"));
 	}
 
 	@Test
