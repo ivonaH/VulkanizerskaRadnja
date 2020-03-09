@@ -94,10 +94,10 @@ public class AutoGumaTest {
 		autoGuma.setPrecnik(14);
 		autoGuma.setSirina(200);
 		autoGuma.setVisina(60);
-		assertTrue(autoGuma.toString().contains(autoGuma.getMarkaModel()));
-		assertTrue(autoGuma.toString().contains(autoGuma.getSirina() + ""));
-		assertTrue(autoGuma.toString().contains(autoGuma.getVisina() + ""));
-		assertTrue(autoGuma.toString().contains(autoGuma.getPrecnik() + ""));
+		assertTrue(autoGuma.toString().contains("Starfire WT200"));
+		assertTrue(autoGuma.toString().contains("14"));
+		assertTrue(autoGuma.toString().contains("200"));
+		assertTrue(autoGuma.toString().contains("60"));
 	}
 
 	@Test
