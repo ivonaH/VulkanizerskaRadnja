@@ -70,7 +70,7 @@ public class AutoGuma {
 	 *             manji od 22.
 	 */
 	public void setPrecnik(int precnik) {
-		if (precnik < 13 && precnik > 22)
+		if (precnik < 13 || precnik > 22)//&& prebaceno u ||
 			throw new RuntimeException("Precnik van opsega");
 		this.precnik = precnik;
 	}
